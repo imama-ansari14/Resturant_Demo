@@ -24,7 +24,8 @@ const IceSpiceRestaurant = () => {
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [heroImageIndex, setHeroImageIndex] = useState(0);
-
+  const [isCheckoutOpen, setIsCheckoutOpen] = useState(false); 
+  const [orderPlaced, setOrderPlaced] = useState(false); 
   const heroImages = [
     "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1920&h=1080&fit=crop&q=80",
     "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?w=1920&h=1080&fit=crop&q=80",
@@ -829,7 +830,6 @@ const IceSpiceRestaurant = () => {
       </section>
 
       {/* Footer */}
-      {/* Footer */}
       <footer className="bg-zinc-950 border-t border-zinc-800 py-16 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
@@ -990,7 +990,200 @@ const IceSpiceRestaurant = () => {
           </div>
         </div>
       </footer>
+      {/* Checkout Modal */}
+      {isCheckoutOpen && (
+        <div className="fixed inset-0 z-50 overflow-hidden">
+          <div
+            className="absolute inset-0 bg-black/70 backdrop-blur-sm"
+            onClick={() => setIsCheckoutOpen(false)}
+          ></div>
+          <div className="absolute inset-0 flex items-center justify-center p-4">
+            <div className="bg-zinc-950 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-zinc-800 shadow-2xl">
+              {!orderPlaced ? (
+                <>
+                  {/* Checkout Header */}
+                  <div className="flex justify-between items-center p-6 border-b border-zinc-800">
+                    <h2 className="text-3xl font-bold">Checkout</h2>
+                    <button
+                      onClick={() => setIsCheckoutOpen(false)}
+                      className="p-2 hover:bg-zinc-800 rounded-lg transition-colors"
+                    >
+                      <X className="w-6 h-6" />
+                    </button>
+                  </div>
 
+                  {/* Order Summary */}
+                  <div className="p-6 border-b border-zinc-800">
+                    <h3 className="text-xl font-bold mb-4">Order Summary</h3>
+                    <div className="space-y-3 max-h-60 overflow-y-auto">
+                      {cart.map((item) => (
+                        <div
+                          key={item.id}
+                          className="flex justify-between items-center bg-zinc-900 p-3 rounded-lg"
+                        >
+                          <div className="flex items-center space-x-3">
+                            <img
+                              src={item.image}
+                              alt={item.name}
+                              className="w-12 h-12 rounded-lg object-cover"
+                            />
+                            <div>
+                              <p className="font-semibold text-sm">
+                                {item.name}
+                              </p>
+                              <p className="text-xs text-zinc-400">
+                                Qty: {item.quantity}
+                              </p>
+                            </div>
+                          </div>
+                          <p className="font-bold">
+                            ${(item.price * item.quantity).toFixed(2)}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="mt-4 space-y-2 text-sm">
+                      <div className="flex justify-between text-zinc-400">
+                        <span>Subtotal</span>
+                        <span>${totalPrice.toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between text-zinc-400">
+                        <span>Tax (10%)</span>
+                        <span>${(totalPrice * 0.1).toFixed(2)}</span>
+                      </div>
+                      <div className="flex justify-between text-zinc-400">
+                        <span>Delivery Fee</span>
+                        <span>$5.00</span>
+                      </div>
+                      <div className="border-t border-zinc-700 pt-2 flex justify-between text-xl font-bold">
+                        <span>Total</span>
+                        <span className="text-cyan-400">
+                          ${(totalPrice * 1.1 + 5).toFixed(2)}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Customer Details Form */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold mb-4">Delivery Details</h3>
+                    <form className="space-y-4">
+                      <div>
+                        <label className="block text-sm font-medium mb-2">
+                          Full Name
+                        </label>
+                        <input
+                          type="text"
+                          placeholder="John Doe"
+                          className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium mb-2">
+                          Phone Number
+                        </label>
+                        <input
+                          type="tel"
+                          placeholder="+1 (555) 123-4567"
+                          className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors"
+                          required
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium mb-2">
+                          Delivery Address
+                        </label>
+                        <textarea
+                          placeholder="Street address, city, zip code"
+                          rows="3"
+                          className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors"
+                          required
+                        ></textarea>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium mb-2">
+                          Special Instructions (Optional)
+                        </label>
+                        <textarea
+                          placeholder="Any special requests?"
+                          rows="2"
+                          className="w-full px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg focus:outline-none focus:border-cyan-500 transition-colors"
+                        ></textarea>
+                      </div>
+
+                      {/* Payment Method */}
+                      <div>
+                        <label className="block text-sm font-medium mb-2">
+                          Payment Method
+                        </label>
+                        <div className="space-y-2">
+                          <label className="flex items-center space-x-3 p-3 bg-zinc-900 rounded-lg cursor-pointer hover:bg-zinc-800 transition-colors">
+                            <input
+                              type="radio"
+                              name="payment"
+                              value="cod"
+                              className="w-4 h-4"
+                              defaultChecked
+                            />
+                            <span>💵 Cash on Delivery</span>
+                          </label>
+                          <label className="flex items-center space-x-3 p-3 bg-zinc-900 rounded-lg cursor-pointer hover:bg-zinc-800 transition-colors">
+                            <input
+                              type="radio"
+                              name="payment"
+                              value="card"
+                              className="w-4 h-4"
+                            />
+                            <span>💳 Credit/Debit Card</span>
+                          </label>
+                        </div>
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setOrderPlaced(true);
+                          setCart([]);
+                        }}
+                        className="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30"
+                      >
+                        Place Order - ${(totalPrice * 1.1 + 5).toFixed(2)}
+                      </button>
+                    </form>
+                  </div>
+                </>
+              ) : (
+                /* Order Success */
+                <div className="p-12 text-center">
+                  <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span className="text-5xl">✅</span>
+                  </div>
+                  <h2 className="text-3xl font-bold mb-4">
+                    Order Placed Successfully!
+                  </h2>
+                  <p className="text-zinc-400 mb-6">
+                    Your order has been received and is being prepared. We'll
+                    deliver it within 30-45 minutes.
+                  </p>
+                  <p className="text-sm text-zinc-500 mb-8">
+                    Order ID: #ICE{Math.floor(Math.random() * 10000)}
+                  </p>
+                  <button
+                    onClick={() => {
+                      setIsCheckoutOpen(false);
+                      setOrderPlaced(false);
+                    }}
+                    className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-xl font-bold transition-all transform hover:scale-105"
+                  >
+                    Continue Shopping
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
       {/* Cart Sidebar */}
       {isCartOpen && (
         <div className="fixed inset-0 z-50 overflow-hidden">
@@ -1096,7 +1289,17 @@ const IceSpiceRestaurant = () => {
                       </span>
                     </div>
                   </div>
-                  <button className="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30 flex items-center justify-center space-x-2">
+                  {/* <button className="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30 flex items-center justify-center space-x-2">
+                    <span>Proceed to Checkout</span>
+                    <ArrowRight className="w-5 h-5" />
+                  </button> */}
+                  <button
+                    onClick={() => {
+                      setIsCheckoutOpen(true);
+                      setIsCartOpen(false);
+                    }}
+                    className="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-blue-500/30 flex items-center justify-center space-x-2"
+                  >
                     <span>Proceed to Checkout</span>
                     <ArrowRight className="w-5 h-5" />
                   </button>
