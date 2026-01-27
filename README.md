@@ -1,70 +1,89 @@
 # 🍴 Restaurant Demo Website
 
-![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Responsive](https://img.shields.io/badge/Responsive-Yes-brightgreen?style=for-the-badge)
-![Status](https://img.shields.io/badge/Project-Completed-success?style=for-the-badge)
-
----
-
 ## 📌 Project Overview
 
-**Restaurant_Demo** is a professional restaurant website demo designed to showcase a modern, responsive, and user-friendly layout for restaurant businesses.
+**Restaurant_Demo** is a modern, responsive restaurant website demo built using **Vite, React, and Tailwind CSS**, featuring a complete **Add to Cart and Checkout flow**.
 
-This project is created specifically to be used as a **sample website for outreach to restaurant brands**, helping them visualize how their online presence could look with a clean and attractive web design.
-
----
-
-## 🎯 Purpose of This Project
-
-- Demonstrate front-end web development skills  
-- Provide a real-world restaurant website sample  
-- Help attract potential clients & brands  
-- Show responsive and professional UI design  
+This project is created as a **professional demo website** to present to restaurant brands during outreach, showcasing both beautiful UI and real ordering functionality.
 
 ---
 
-## 🚀 Features
+## 🛠️ Tech Stack
+<p>
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
+</p>
 
-- Modern restaurant website layout  
-- Fully responsive design (mobile-friendly)  
-- Clean and professional UI  
-- Smooth navigation  
-- Food sections & content layout  
-- Fast loading & optimized structure  
-
----
-
-## 🛠️ Built With
-
-- HTML5 – Website structure  
-- CSS3 – Styling & layout  
-- Bootstrap – Responsive design framework  
-- JavaScript – Interactivity  
+| Technology | Purpose |
+|-----------|--------|
+| ⚡ Vite | Fast build & development |
+| ⚛ React | Component-based UI |
+| 🎨 Tailwind CSS | Styling & responsiveness |
+| 🌐 Vercel | Deployment |
 
 ---
 
-## 📷 Preview
 
-Add your live demo link or screenshots here:
+## 🎯 Why This Project?
+
+✔ Demonstrate modern frontend development skills  
+✔ Provide a real-world restaurant ordering experience  
+✔ Help restaurant owners visualize online ordering systems  
+✔ Showcase responsive and interactive UI  
+
+---
+
+## 🚀 Key Features
+
+- 🍽️ Modern restaurant website design  
+- 🛒 Add to Cart functionality  
+- 💳 Demo Checkout process  
+- ⚡ Fast performance with Vite  
+- 📱 Fully responsive layout  
+- 🎨 Tailwind CSS styling  
+- 🧭 Smooth user experience  
+
+---
+
+## 📷 Website Preview (Click Image to Open Live Site)
+
+> Upload your website screenshot (example: `preview.png`) inside the repository.
 
 ```markdown
-Live Demo: https://your-live-link.netlify.app
+[![Restaurant Demo Preview](./preview.png)](https://resturant-demo-rho.vercel.app/)
 ```
+
+*(Temporary placeholder if screenshot not added yet)*
+
+```markdown
+[![Restaurant Demo Preview](https://via.placeholder.com/1200x600.png?text=Restaurant+Demo+Website)](https://resturant-demo-rho.vercel.app/)
+```
+
+---
+
+## 🔗 Live Demo
+
+🚀 https://resturant-demo-rho.vercel.app/
 
 ---
 
 ## 📁 Project Structure
 
 ```
-Restaurant_Demo
+Resturant_Demo
 │
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── context/ (Cart Logic)
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── public/
 ├── index.html
-├── css/
-├── js/
-├── images/
+├── tailwind.config.js
+├── vite.config.js
 └── README.md
 ```
 
@@ -75,27 +94,27 @@ Restaurant_Demo
 **Imama Ansari**  
 Frontend Web Developer  
 
-GitHub: https://github.com/imama-ansari14  
-LinkedIn: https://www.linkedin.com/in/imama-ansari-5a604b337  
+🔗 GitHub: https://github.com/imama-ansari14  
+🔗 LinkedIn: https://www.linkedin.com/in/imama-ansari-5a604b337  
 
 ---
 
 ## 📬 Contact
 
-If you are a restaurant owner or brand looking for a professional website:
+If you are a restaurant owner or brand looking for a modern website with online ordering:
 
-Email: ansariimama@yahoo.com  
-Phone: 03332847377  
+📧 Email: ansariimama@yahoo.com  
+📞 Phone: 03332847377  
 
 ---
 
 ## ⭐ Support
 
-If you like this project, please consider giving it a star ⭐ on GitHub.  
-It helps motivate me to create more professional web projects!
+If you like this project, please give it a ⭐ on GitHub.  
+It motivates me to build more real-world projects!
 
 ---
 
 ## 📄 License
 
-This project is for demonstration and portfolio purposes.
+This project is created for demo and portfolio purposes.
