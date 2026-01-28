@@ -45,31 +45,21 @@ This project is created as a **professional demo website** to present to restaur
 - 🧭 Smooth user experience  
 
 ---
-
 ## 📷 Website Preview (Click Image to Open Live Site)
-
-> Upload your website screenshot (example: `preview.png`) inside the repository.
-
-```markdown
-[![Restaurant Demo Preview](./preview.png)](https://resturant-demo-rho.vercel.app/)
-```
-
-*(Temporary placeholder if screenshot not added yet)*
-
-```markdown
-[![Restaurant Demo Preview](https://via.placeholder.com/1200x600.png?text=Restaurant+Demo+Website)](https://resturant-demo-rho.vercel.app/)
-```
+[![Restaurant Demo Preview](./src/assets/preview.png)](https://resturant-demo-rho.vercel.app/)
 
 ---
 
-## 🔗 Live Demo
+## 📬 Contact
 
-🚀 https://resturant-demo-rho.vercel.app/
+If you are a restaurant owner or brand looking for a modern website with online ordering:
+
+📧 Email: ansariimama@yahoo.com  
+📞 Phone: 03332847377  
 
 ---
 
 ## 📁 Project Structure
-
 ```
 Resturant_Demo
 │
@@ -99,15 +89,6 @@ Frontend Web Developer
 
 ---
 
-## 📬 Contact
-
-If you are a restaurant owner or brand looking for a modern website with online ordering:
-
-📧 Email: ansariimama@yahoo.com  
-📞 Phone: 03332847377  
-
----
-
 ## ⭐ Support
 
 If you like this project, please give it a ⭐ on GitHub.  
@@ -116,5 +97,4 @@ It motivates me to build more real-world projects!
 ---
 
 ## 📄 License
-
 This project is created for demo and portfolio purposes.
