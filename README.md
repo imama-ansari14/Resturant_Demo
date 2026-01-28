@@ -89,12 +89,12 @@ Frontend Web Developer
 
 ---
 
-## ⭐ Support
-
-If you like this project, please give it a ⭐ on GitHub.  
-It motivates me to build more real-world projects!
+## 📄 License
+This project is created for demo and portfolio purposes.
 
 ---
 
-## 📄 License
-This project is created for demo and portfolio purposes.
+<h1 align="center">⭐️ Thank you for visiting My Projects! </h1>
+  
+<p align="center">i hope you like My Projects </p> 
+<p align="center">If you find it useful or inspiring, feel free to ⭐️ the repository and share your feedback.  </p> 
